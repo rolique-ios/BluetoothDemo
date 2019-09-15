@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25444DBD232B88D2007D6610 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DBC232B88D2007D6610 /* AppDelegate.swift */; };
+		25444DC2232B88D2007D6610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25444DC0232B88D2007D6610 /* Main.storyboard */; };
+		25444DC4232B88D2007D6610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25444DC3232B88D2007D6610 /* Assets.xcassets */; };
+		25444DC7232B88D2007D6610 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25444DC5232B88D2007D6610 /* LaunchScreen.storyboard */; };
+		25444DD1232B8CCC007D6610 /* Spitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DD0232B8CCC007D6610 /* Spitter.swift */; };
+		25444DD3232B8F9C007D6610 /* RoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DD2232B8F9C007D6610 /* RoleViewController.swift */; };
+		25444DD7232B904C007D6610 /* PeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DD6232B904C007D6610 /* PeripheralViewController.swift */; };
+		25444DD9232B9059007D6610 /* CentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DD8232B9059007D6610 /* CentralViewController.swift */; };
+		25444E05232B938E007D6610 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DDB232B938E007D6610 /* CALayer.swift */; };
+		25444E06232B938E007D6610 /* TernarWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DDC232B938E007D6610 /* TernarWrapper.swift */; };
+		25444E07232B938E007D6610 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DDD232B938E007D6610 /* Date.swift */; };
+		25444E08232B938E007D6610 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DDE232B938E007D6610 /* UIView.swift */; };
+		25444E09232B938E007D6610 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DDF232B938E007D6610 /* CaseIterable.swift */; };
+		25444E0B232B938E007D6610 /* MFMailComposeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE1232B938E007D6610 /* MFMailComposeViewControllerDelegate.swift */; };
+		25444E0C232B938E007D6610 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE2232B938E007D6610 /* NotificationName.swift */; };
+		25444E0D232B938E007D6610 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE3232B938E007D6610 /* Array.swift */; };
+		25444E0E232B938E007D6610 /* FunctionApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE4232B938E007D6610 /* FunctionApplication.swift */; };
+		25444E0F232B938E007D6610 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE5232B938E007D6610 /* UIColor.swift */; };
+		25444E10232B938E007D6610 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE6232B938E007D6610 /* Functions.swift */; };
+		25444E12232B938E007D6610 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE8232B938E007D6610 /* Result.swift */; };
+		25444E13232B938E007D6610 /* DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DE9232B938E007D6610 /* DateComponents.swift */; };
+		25444E14232B938E007D6610 /* NSBundle+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25444DEB232B938E007D6610 /* NSBundle+Bundle.m */; };
+		25444E15232B938E007D6610 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DED232B938E007D6610 /* UISearchBar.swift */; };
+		25444E16232B938E007D6610 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DEE232B938E007D6610 /* CGSize.swift */; };
+		25444E17232B938E007D6610 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DEF232B938E007D6610 /* CLLocationCoordinate2D.swift */; };
+		25444E18232B938E007D6610 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF0232B938E007D6610 /* DispatchQueue.swift */; };
+		25444E19232B938E007D6610 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF1232B938E007D6610 /* UICollectionView.swift */; };
+		25444E1A232B938E007D6610 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF2232B938E007D6610 /* Int.swift */; };
+		25444E1B232B938E007D6610 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF3232B938E007D6610 /* UITableView.swift */; };
+		25444E1C232B938E007D6610 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF5232B938E007D6610 /* UITextField.swift */; };
+		25444E1D232B938E007D6610 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF6232B938E007D6610 /* Dictionary.swift */; };
+		25444E1E232B938E007D6610 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF7232B938E007D6610 /* String.swift */; };
+		25444E1F232B938E007D6610 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF8232B938E007D6610 /* CGPoint.swift */; };
+		25444E20232B938E007D6610 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DF9232B938E007D6610 /* UIButton.swift */; };
+		25444E21232B938E007D6610 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DFA232B938E007D6610 /* UIImage.swift */; };
+		25444E22232B938E007D6610 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DFB232B938E007D6610 /* UIViewController.swift */; };
+		25444E23232B938E007D6610 /* FuctionComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DFC232B938E007D6610 /* FuctionComposition.swift */; };
+		25444E24232B938E007D6610 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DFD232B938E007D6610 /* NSLock.swift */; };
+		25444E25232B938E007D6610 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DFE232B938E007D6610 /* Double.swift */; };
+		25444E26232B938E007D6610 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444DFF232B938E007D6610 /* UIFont.swift */; };
+		25444E27232B938E007D6610 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E00232B938E007D6610 /* CGRect.swift */; };
+		25444E28232B938E007D6610 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E01232B938E007D6610 /* Optional.swift */; };
+		25444E29232B938E007D6610 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E02232B938E007D6610 /* TimeInterval.swift */; };
+		25444E2A232B938E007D6610 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E03232B938E007D6610 /* UINavigationController.swift */; };
+		25444E2B232B938E007D6610 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E04232B938E007D6610 /* UIEdgeInsets.swift */; };
+		25444E2F232B9541007D6610 /* CentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E2E232B9541007D6610 /* CentralManager.swift */; };
+		25444E31232B9550007D6610 /* PeripheralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E30232B9550007D6610 /* PeripheralManager.swift */; };
+		25444E34232B9A86007D6610 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E33232B9A86007D6610 /* Device.swift */; };
+		2562E262232E021900C30D9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2562E261232E021900C30D9A /* Constants.swift */; };
+		25D23FE3232BB0370020DB4C /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */; };
+		25D23FE4232BB0370020DB4C /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D23FE2232BB0370020DB4C /* DeviceTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		25444DB9232B88D2007D6610 /* BluetoothTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25444DBC232B88D2007D6610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25444DC1232B88D2007D6610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25444DC3232B88D2007D6610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25444DC6232B88D2007D6610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25444DC8232B88D2007D6610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25444DD0232B8CCC007D6610 /* Spitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spitter.swift; sourceTree = "<group>"; };
+		25444DD2232B8F9C007D6610 /* RoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleViewController.swift; sourceTree = "<group>"; };
+		25444DD6232B904C007D6610 /* PeripheralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralViewController.swift; sourceTree = "<group>"; };
+		25444DD8232B9059007D6610 /* CentralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralViewController.swift; sourceTree = "<group>"; };
+		25444DDB232B938E007D6610 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		25444DDC232B938E007D6610 /* TernarWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TernarWrapper.swift; sourceTree = "<group>"; };
+		25444DDD232B938E007D6610 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		25444DDE232B938E007D6610 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		25444DDF232B938E007D6610 /* CaseIterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
+		25444DE1232B938E007D6610 /* MFMailComposeViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFMailComposeViewControllerDelegate.swift; sourceTree = "<group>"; };
+		25444DE2232B938E007D6610 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		25444DE3232B938E007D6610 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		25444DE4232B938E007D6610 /* FunctionApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionApplication.swift; sourceTree = "<group>"; };
+		25444DE5232B938E007D6610 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		25444DE6232B938E007D6610 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		25444DE8232B938E007D6610 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		25444DE9232B938E007D6610 /* DateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateComponents.swift; sourceTree = "<group>"; };
+		25444DEB232B938E007D6610 /* NSBundle+Bundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Bundle.m"; sourceTree = "<group>"; };
+		25444DEC232B938E007D6610 /* NSBundle+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Bundle.h"; sourceTree = "<group>"; };
+		25444DED232B938E007D6610 /* UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		25444DEE232B938E007D6610 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		25444DEF232B938E007D6610 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
+		25444DF0232B938E007D6610 /* DispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		25444DF1232B938E007D6610 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		25444DF2232B938E007D6610 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		25444DF3232B938E007D6610 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		25444DF5232B938E007D6610 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		25444DF6232B938E007D6610 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		25444DF7232B938E007D6610 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		25444DF8232B938E007D6610 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		25444DF9232B938E007D6610 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		25444DFA232B938E007D6610 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		25444DFB232B938E007D6610 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		25444DFC232B938E007D6610 /* FuctionComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuctionComposition.swift; sourceTree = "<group>"; };
+		25444DFD232B938E007D6610 /* NSLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
+		25444DFE232B938E007D6610 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		25444DFF232B938E007D6610 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		25444E00232B938E007D6610 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		25444E01232B938E007D6610 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		25444E02232B938E007D6610 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		25444E03232B938E007D6610 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		25444E04232B938E007D6610 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		25444E2E232B9541007D6610 /* CentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManager.swift; sourceTree = "<group>"; };
+		25444E30232B9550007D6610 /* PeripheralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralManager.swift; sourceTree = "<group>"; };
+		25444E33232B9A86007D6610 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		2562E261232E021900C30D9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2562E264232E02FB00C30D9A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		25D23FE2232BB0370020DB4C /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25444DB6232B88D2007D6610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25444DB0232B88D2007D6610 = {
+			isa = PBXGroup;
+			children = (
+				25444DBB232B88D2007D6610 /* BluetoothTest */,
+				25444DBA232B88D2007D6610 /* Products */,
+				2562E263232E02FB00C30D9A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		25444DBA232B88D2007D6610 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25444DB9232B88D2007D6610 /* BluetoothTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25444DBB232B88D2007D6610 /* BluetoothTest */ = {
+			isa = PBXGroup;
+			children = (
+				25D23FE0232BB0260020DB4C /* Cells */,
+				25444DBC232B88D2007D6610 /* AppDelegate.swift */,
+				25444DC0232B88D2007D6610 /* Main.storyboard */,
+				25444DC3232B88D2007D6610 /* Assets.xcassets */,
+				25444DC5232B88D2007D6610 /* LaunchScreen.storyboard */,
+				25444DC8232B88D2007D6610 /* Info.plist */,
+				25444E32232B9A58007D6610 /* Model */,
+				25444E2D232B94FA007D6610 /* Manager */,
+				25444E2C232B94F0007D6610 /* Controllers */,
+				25444DDA232B938E007D6610 /* Extensions */,
+				2562E261232E021900C30D9A /* Constants.swift */,
+			);
+			path = BluetoothTest;
+			sourceTree = "<group>";
+		};
+		25444DDA232B938E007D6610 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				25444DD0232B8CCC007D6610 /* Spitter.swift */,
+				25444DDB232B938E007D6610 /* CALayer.swift */,
+				25444DDC232B938E007D6610 /* TernarWrapper.swift */,
+				25444DDD232B938E007D6610 /* Date.swift */,
+				25444DDE232B938E007D6610 /* UIView.swift */,
+				25444DDF232B938E007D6610 /* CaseIterable.swift */,
+				25444DE1232B938E007D6610 /* MFMailComposeViewControllerDelegate.swift */,
+				25444DE2232B938E007D6610 /* NotificationName.swift */,
+				25444DE3232B938E007D6610 /* Array.swift */,
+				25444DE4232B938E007D6610 /* FunctionApplication.swift */,
+				25444DE5232B938E007D6610 /* UIColor.swift */,
+				25444DE6232B938E007D6610 /* Functions.swift */,
+				25444DE8232B938E007D6610 /* Result.swift */,
+				25444DE9232B938E007D6610 /* DateComponents.swift */,
+				25444DEA232B938E007D6610 /* Bundle */,
+				25444DED232B938E007D6610 /* UISearchBar.swift */,
+				25444DEE232B938E007D6610 /* CGSize.swift */,
+				25444DEF232B938E007D6610 /* CLLocationCoordinate2D.swift */,
+				25444DF0232B938E007D6610 /* DispatchQueue.swift */,
+				25444DF1232B938E007D6610 /* UICollectionView.swift */,
+				25444DF2232B938E007D6610 /* Int.swift */,
+				25444DF3232B938E007D6610 /* UITableView.swift */,
+				25444DF4232B938E007D6610 /* NgImageFileIO */,
+				25444DF5232B938E007D6610 /* UITextField.swift */,
+				25444DF6232B938E007D6610 /* Dictionary.swift */,
+				25444DF7232B938E007D6610 /* String.swift */,
+				25444DF8232B938E007D6610 /* CGPoint.swift */,
+				25444DF9232B938E007D6610 /* UIButton.swift */,
+				25444DFA232B938E007D6610 /* UIImage.swift */,
+				25444DFB232B938E007D6610 /* UIViewController.swift */,
+				25444DFC232B938E007D6610 /* FuctionComposition.swift */,
+				25444DFD232B938E007D6610 /* NSLock.swift */,
+				25444DFE232B938E007D6610 /* Double.swift */,
+				25444DFF232B938E007D6610 /* UIFont.swift */,
+				25444E00232B938E007D6610 /* CGRect.swift */,
+				25444E01232B938E007D6610 /* Optional.swift */,
+				25444E02232B938E007D6610 /* TimeInterval.swift */,
+				25444E03232B938E007D6610 /* UINavigationController.swift */,
+				25444E04232B938E007D6610 /* UIEdgeInsets.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		25444DEA232B938E007D6610 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				25444DEB232B938E007D6610 /* NSBundle+Bundle.m */,
+				25444DEC232B938E007D6610 /* NSBundle+Bundle.h */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		25444DF4232B938E007D6610 /* NgImageFileIO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NgImageFileIO;
+			sourceTree = "<group>";
+		};
+		25444E2C232B94F0007D6610 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25444DD2232B8F9C007D6610 /* RoleViewController.swift */,
+				25444DD8232B9059007D6610 /* CentralViewController.swift */,
+				25444DD6232B904C007D6610 /* PeripheralViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		25444E2D232B94FA007D6610 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				25444E2E232B9541007D6610 /* CentralManager.swift */,
+				25444E30232B9550007D6610 /* PeripheralManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		25444E32232B9A58007D6610 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				25444E33232B9A86007D6610 /* Device.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2562E263232E02FB00C30D9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2562E264232E02FB00C30D9A /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25D23FE0232BB0260020DB4C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				25D23FE5232BB03B0020DB4C /* Device */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		25D23FE5232BB03B0020DB4C /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */,
+				25D23FE2232BB0370020DB4C /* DeviceTableViewCell.xib */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25444DB8232B88D2007D6610 /* BluetoothTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25444DCB232B88D2007D6610 /* Build configuration list for PBXNativeTarget "BluetoothTest" */;
+			buildPhases = (
+				25444DB5232B88D2007D6610 /* Sources */,
+				25444DB6232B88D2007D6610 /* Frameworks */,
+				25444DB7232B88D2007D6610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BluetoothTest;
+			productName = BluetoothTest;
+			productReference = 25444DB9232B88D2007D6610 /* BluetoothTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25444DB1232B88D2007D6610 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Rolique;
+				TargetAttributes = {
+					25444DB8232B88D2007D6610 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 25444DB4232B88D2007D6610 /* Build configuration list for PBXProject "BluetoothTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25444DB0232B88D2007D6610;
+			productRefGroup = 25444DBA232B88D2007D6610 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25444DB8232B88D2007D6610 /* BluetoothTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25444DB7232B88D2007D6610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25444DC7232B88D2007D6610 /* LaunchScreen.storyboard in Resources */,
+				25444DC4232B88D2007D6610 /* Assets.xcassets in Resources */,
+				25444DC2232B88D2007D6610 /* Main.storyboard in Resources */,
+				25D23FE4232BB0370020DB4C /* DeviceTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25444DB5232B88D2007D6610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25444E09232B938E007D6610 /* CaseIterable.swift in Sources */,
+				25444E08232B938E007D6610 /* UIView.swift in Sources */,
+				25444E22232B938E007D6610 /* UIViewController.swift in Sources */,
+				25444E27232B938E007D6610 /* CGRect.swift in Sources */,
+				25444DD3232B8F9C007D6610 /* RoleViewController.swift in Sources */,
+				25444E25232B938E007D6610 /* Double.swift in Sources */,
+				25444E1A232B938E007D6610 /* Int.swift in Sources */,
+				25444E13232B938E007D6610 /* DateComponents.swift in Sources */,
+				25444E16232B938E007D6610 /* CGSize.swift in Sources */,
+				25444E21232B938E007D6610 /* UIImage.swift in Sources */,
+				25444E0C232B938E007D6610 /* NotificationName.swift in Sources */,
+				25444E23232B938E007D6610 /* FuctionComposition.swift in Sources */,
+				25444E2A232B938E007D6610 /* UINavigationController.swift in Sources */,
+				25444DD7232B904C007D6610 /* PeripheralViewController.swift in Sources */,
+				25444E12232B938E007D6610 /* Result.swift in Sources */,
+				25444E1D232B938E007D6610 /* Dictionary.swift in Sources */,
+				25444E28232B938E007D6610 /* Optional.swift in Sources */,
+				25444E29232B938E007D6610 /* TimeInterval.swift in Sources */,
+				25444E1C232B938E007D6610 /* UITextField.swift in Sources */,
+				25444E0F232B938E007D6610 /* UIColor.swift in Sources */,
+				25444E18232B938E007D6610 /* DispatchQueue.swift in Sources */,
+				25444E19232B938E007D6610 /* UICollectionView.swift in Sources */,
+				25444E0D232B938E007D6610 /* Array.swift in Sources */,
+				25444E20232B938E007D6610 /* UIButton.swift in Sources */,
+				2562E262232E021900C30D9A /* Constants.swift in Sources */,
+				25444E2B232B938E007D6610 /* UIEdgeInsets.swift in Sources */,
+				25444E0B232B938E007D6610 /* MFMailComposeViewControllerDelegate.swift in Sources */,
+				25444E2F232B9541007D6610 /* CentralManager.swift in Sources */,
+				25444E14232B938E007D6610 /* NSBundle+Bundle.m in Sources */,
+				25444E06232B938E007D6610 /* TernarWrapper.swift in Sources */,
+				25444E31232B9550007D6610 /* PeripheralManager.swift in Sources */,
+				25444DBD232B88D2007D6610 /* AppDelegate.swift in Sources */,
+				25444E10232B938E007D6610 /* Functions.swift in Sources */,
+				25444E1F232B938E007D6610 /* CGPoint.swift in Sources */,
+				25444E26232B938E007D6610 /* UIFont.swift in Sources */,
+				25444E05232B938E007D6610 /* CALayer.swift in Sources */,
+				25444DD9232B9059007D6610 /* CentralViewController.swift in Sources */,
+				25444E1B232B938E007D6610 /* UITableView.swift in Sources */,
+				25D23FE3232BB0370020DB4C /* DeviceTableViewCell.swift in Sources */,
+				25444E15232B938E007D6610 /* UISearchBar.swift in Sources */,
+				25444E24232B938E007D6610 /* NSLock.swift in Sources */,
+				25444E34232B9A86007D6610 /* Device.swift in Sources */,
+				25444E07232B938E007D6610 /* Date.swift in Sources */,
+				25444DD1232B8CCC007D6610 /* Spitter.swift in Sources */,
+				25444E0E232B938E007D6610 /* FunctionApplication.swift in Sources */,
+				25444E17232B938E007D6610 /* CLLocationCoordinate2D.swift in Sources */,
+				25444E1E232B938E007D6610 /* String.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		25444DC0232B88D2007D6610 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25444DC1232B88D2007D6610 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25444DC5232B88D2007D6610 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25444DC6232B88D2007D6610 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25444DC9232B88D2007D6610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		25444DCA232B88D2007D6610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25444DCC232B88D2007D6610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL58JZZ8KD;
+				INFOPLIST_FILE = BluetoothTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.rolique.BluetoothTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		25444DCD232B88D2007D6610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL58JZZ8KD;
+				INFOPLIST_FILE = BluetoothTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.rolique.BluetoothTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25444DB4232B88D2007D6610 /* Build configuration list for PBXProject "BluetoothTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25444DC9232B88D2007D6610 /* Debug */,
+				25444DCA232B88D2007D6610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25444DCB232B88D2007D6610 /* Build configuration list for PBXNativeTarget "BluetoothTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25444DCC232B88D2007D6610 /* Debug */,
+				25444DCD232B88D2007D6610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25444DB1232B88D2007D6610 /* Project object */;
+}
