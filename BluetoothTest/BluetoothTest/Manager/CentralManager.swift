@@ -20,11 +20,6 @@ final class CentralManager: NSObject {
     var centralManager: CBCentralManager!
     weak var delegate: CentralManagerDelegate?
 
-    let notifyChracatorUUID = CBUUID(string: "2C270F0C-C9D3-4E56-ACCD-15621FA1568E")
-    let rwChracatorUUID = CBUUID(string: "6082238A-C138-42B0-9562-44A1642BE5A5")
-    let notifyUUID = CBUUID(string: "83951652-DF2E-4CF7-8E45-FCE84073F705")
-    let rwUUID = CBUUID(string: "3ECDBC04-441D-4A7A-A62E-43081CD67ED7")
-
     var discovered = Set<Device>() {
         didSet {
             self.delegate?.didUpdateDiscoveredDevices(Array(discovered).sorted(by: { dev1, dev2 in return (dev1.name ?? "") > (dev2.name ?? "") }))
@@ -103,7 +98,7 @@ extension CentralManager: CBCentralManagerDelegate {
         self.connected.insert(device)
         self.connectingDevice?.cbperiferal.delegate = self
         self.connectingDevice?.cbperiferal.readRSSI()
-        self.connectingDevice?.cbperiferal.discoverServices([notifyUUID, rwUUID])
+        self.connectingDevice?.cbperiferal.discoverServices([Settings.main.notifyUUID, Settings.main.rwUUID])
 
         print("discoverServices")
     }
@@ -138,11 +133,11 @@ extension CentralManager: CBPeripheralDelegate {
         
         for service in services {
             print("service is \(service.uuid.uuidString)")
-            if service.uuid == notifyUUID {
-                peripheral.discoverCharacteristics([notifyChracatorUUID], for: service)
+            if service.uuid == Settings.main.notifyUUID {
+                peripheral.discoverCharacteristics([Settings.main.notifyChracatorUUID], for: service)
             }
-            if service.uuid == rwUUID {
-                peripheral.discoverCharacteristics([rwChracatorUUID], for: service)
+            if service.uuid == Settings.main.rwUUID {
+                peripheral.discoverCharacteristics([Settings.main.rwChracatorUUID], for: service)
             }
         }
     }
@@ -166,7 +161,7 @@ extension CentralManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         for characteristic in service.characteristics! {
             print("discover characteristic \(characteristic)")
-            if characteristic.uuid == rwChracatorUUID {
+            if characteristic.uuid == Settings.main.rwChracatorUUID {
                 let readData = ("uwei").data(using: .utf8)!
                 peripheral.writeValue(readData, for: characteristic, type: CBCharacteristicWriteType.withResponse)
             }

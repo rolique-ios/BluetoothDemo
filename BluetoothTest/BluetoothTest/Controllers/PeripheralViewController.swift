@@ -13,6 +13,7 @@ final class PeripheralViewController: UIViewController {
   @IBOutlet private weak var textView: UITextView!
   @IBOutlet private weak var advertisingSwitch: UISwitch!
   @IBOutlet private weak var logsTextView: UITextView!
+  @IBOutlet private weak var locationLabel: UILabel!
   
   private var peripheralManager: CBPeripheralManager?
   private var transferCharacteristic: CBMutableCharacteristic?

@@ -17,13 +17,8 @@ protocol PeripheralManagerDelegate: class {
 }
 
 final class PeripheralManager: NSObject {
-    let cUUID1 = CBUUID(string: "2C270F0C-C9D3-4E56-ACCD-15621FA1568E")
-    let cUUID2 = CBUUID(string: "6082238A-C138-42B0-9562-44A1642BE5A5")
-    let notifyUUID = CBUUID(string: "83951652-DF2E-4CF7-8E45-FCE84073F705")
-    let rwUUID = CBUUID(string: "3ECDBC04-441D-4A7A-A62E-43081CD67ED7")
-    
+
     private var sendDataTimer:Timer?
-    
     private var notifyService: CBMutableService?
     private var rwService: CBMutableService?
     private var notifyCharacteristic: CBMutableCharacteristic?
@@ -43,18 +38,18 @@ final class PeripheralManager: NSObject {
     func broadcast(data: [String: Any]) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            self.peripheralManager.startAdvertising([CBAdvertisementDataLocalNameKey:"uwei service" , CBAdvertisementDataServiceUUIDsKey : [self.notifyUUID, self.rwUUID]])
+            self.peripheralManager.startAdvertising([CBAdvertisementDataLocalNameKey:"uwei service" , CBAdvertisementDataServiceUUIDsKey : [Settings.main.notifyUUID, Settings.main.rwUUID]])
         }
     }
     
     func setPeripheralService() {
-        notifyCharacteristic = CBMutableCharacteristic(type: cUUID1, properties: .notify, value: nil, permissions: .readable)
-        rwableCharacteristic = CBMutableCharacteristic(type: cUUID2, properties: [.read, .write], value: nil, permissions: [.writeable, .readable])
+        notifyCharacteristic = CBMutableCharacteristic(type: Settings.main.cUUID1, properties: .notify, value: nil, permissions: .readable)
+        rwableCharacteristic = CBMutableCharacteristic(type: Settings.main.cUUID2, properties: [.read, .write], value: nil, permissions: [.writeable, .readable])
         
-        notifyService = CBMutableService(type: notifyUUID, primary: true)
+        notifyService = CBMutableService(type: Settings.main.notifyUUID, primary: true)
         notifyService?.characteristics = [notifyCharacteristic!]
         
-        rwService = CBMutableService(type: rwUUID, primary: true)
+        rwService = CBMutableService(type: Settings.main.rwUUID, primary: true)
         rwService?.characteristics = [rwableCharacteristic!]
         
         peripheralManager?.add(notifyService!)
