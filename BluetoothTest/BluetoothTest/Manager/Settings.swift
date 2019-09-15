@@ -28,5 +28,16 @@ class Settings: NSObject {
   var transferCharacteristicUUID = CBUUID(string: "08590F7E-DB05-467E-8757-72F6F66666D4")
   
   
+  func updateWithType(_ type: UUIDType, nsuuid: UUID) {
+    switch type {
+    case .cUUID1: cUUID1 = CBUUID(nsuuid: nsuuid)
+    case .cUUID2: cUUID2 = CBUUID(nsuuid: nsuuid)
+    case .notifyUUID: notifyUUID = CBUUID(nsuuid: nsuuid)
+    case .rwUUID: rwUUID = CBUUID(nsuuid: nsuuid)
+    case .transferServiceUUID: transferServiceUUID = CBUUID(nsuuid: nsuuid)
+    case .transferCharacteristicUUID: transferCharacteristicUUID = CBUUID(nsuuid: nsuuid)
+    }
+  }
+  
 }
 
