@@ -109,7 +109,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
     logsTextView?.text = (logsTextView?.text ?? "") + "\nCentral subscribed to characteristic."
     
     // Get the data
-    dataToSend = textView.text.data(using: String.Encoding.utf8)
+    dataToSend = ((Locator.main.location?.data.description ?? "") + "\n" + textView.text).data(using: String.Encoding.utf8)
     
     // Reset the index
     sendDataIndex = 0;
