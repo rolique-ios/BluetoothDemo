@@ -119,5 +119,4 @@ extension RoleViewController: UITextFieldDelegate {
     return item.isValid
   }
   
-  
 }

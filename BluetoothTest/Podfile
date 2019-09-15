@@ -9,5 +9,6 @@ target 'BluetoothTest' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

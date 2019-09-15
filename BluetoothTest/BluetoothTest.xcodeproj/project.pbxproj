@@ -321,6 +321,7 @@
 				25444DB6232B88D2007D6610 /* Frameworks */,
 				25444DB7232B88D2007D6610 /* Resources */,
 				99C7AE6C9AD14F5DB0D8017E /* [CP] Embed Pods Frameworks */,
+				B5D35095232ED7CA00F8E208 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -423,6 +424,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BluetoothTest/Pods-BluetoothTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B5D35095232ED7CA00F8E208 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 22909fdaa0f026e5f352d0365e3c845a7437eca8 2592b7472b5a416d03d6b9edc4235212cb75de70cb19ad1f71dd6e3b373684e0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
