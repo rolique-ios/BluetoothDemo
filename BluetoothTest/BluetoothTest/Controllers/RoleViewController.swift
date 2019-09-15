@@ -9,13 +9,19 @@
 import UIKit
 
 final class RoleViewController: UIViewController {
-    @IBAction func centralTouchUpInside(sender: UIButton) {
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "CentralViewController"))!
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func peripheraTouchUpInside(sender: UIButton) {
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "PeripheralViewController"))!
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    Locator.main.start()
+  }
+  
+  @IBAction func centralTouchUpInside(sender: UIButton) {
+    let vc = (self.storyboard?.instantiateViewController(withIdentifier: "CentralViewController"))!
+    self.navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  @IBAction func peripheraTouchUpInside(sender: UIButton) {
+    let vc = (self.storyboard?.instantiateViewController(withIdentifier: "PeripheralViewController"))!
+    self.navigationController?.pushViewController(vc, animated: true)
+  }
 }
