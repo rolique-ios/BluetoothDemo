@@ -79,6 +79,14 @@ final class RoleViewController: UIViewController {
     }
   }
   
+  @objc func updateSettings() {
+    fieldStrings.forEach { item in
+      if let uuid = UUID(uuidString: item.text ?? "") {
+        Settings.main.updateWithType(item.type, nsuuid: uuid)
+      }
+    }
+  }
+  
   @objc func showWrongUUIDAlert() {
     Spitter.showOkAlertOnPVC("this string is not valid UUID")
   }
@@ -104,12 +112,10 @@ extension RoleViewController: UITextFieldDelegate {
     guard let item = fieldStrings.first(where: { $0.field == textField }) else {
       return false
     }
-    if item.isValid {
-      Settings.main.updateWithType(item.type, nsuuid: UUID(uuidString: textField.text ?? "")!)
-      NotificationCenter.default.post(name: NSNotification.Name.onUpdateSettings, object: nil)
-      view.endEditing(false)
-    } else { showWrongUUIDAlert() }
+    if item.isValid { view.endEditing(false) } else { showWrongUUIDAlert() }
     updateUI()
+    updateSettings()
+    NotificationCenter.default.post(name: NSNotification.Name.onUpdateSettings, object: nil)
     return item.isValid
   }
   
