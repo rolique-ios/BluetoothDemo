@@ -15,16 +15,31 @@ final class RoleViewController: UIViewController {
   @IBOutlet weak var cUUID2Field: UITextField!
   @IBOutlet weak var notifyUUIDField: UITextField!
   @IBOutlet weak var rwUUIDField: UITextField!
-  @IBOutlet weak var notifyChracatorUUIDField: UITextField!
-  @IBOutlet weak var rwChracatorUUIDField: UITextField!
+  @IBOutlet weak var transferServiceUUIDField: UITextField!
+  @IBOutlet weak var transferCharacteristicUUIDField: UITextField!
 
   var fields: [UITextField] {
-    return [cUUID1Field, cUUID2Field, notifyUUIDField, rwUUIDField, notifyChracatorUUIDField, rwChracatorUUIDField]
+    return [cUUID1Field, cUUID2Field, notifyUUIDField, rwUUIDField, transferServiceUUIDField, transferCharacteristicUUIDField]
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    fields.forEach { $0.delegate = self }
+    fields.forEach {
+      $0.delegate = self }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    updateUI()
+  }
+  
+  @objc func updateUI() {
+    cUUID1Field.text = Settings.main.cUUID1.uuidString
+    cUUID2Field.text = Settings.main.cUUID2.uuidString
+    notifyUUIDField.text = Settings.main.notifyUUID.uuidString
+    rwUUIDField.text = Settings.main.rwUUID.uuidString
+    transferServiceUUIDField.text = Settings.main.transferServiceUUID.uuidString
+    transferCharacteristicUUIDField.text = Settings.main.transferCharacteristicUUID.uuidString
   }
   
   @objc func updateSettigns() {
@@ -32,8 +47,9 @@ final class RoleViewController: UIViewController {
     Settings.main.cUUID2 = CBUUID(string: cUUID2Field.text ?? "")
     Settings.main.notifyUUID = CBUUID(string: notifyUUIDField.text ?? "")
     Settings.main.rwUUID = CBUUID(string: rwUUIDField.text ?? "")
-    Settings.main.notifyChracatorUUID = CBUUID(string: notifyChracatorUUIDField.text ?? "")
-    Settings.main.rwChracatorUUID = CBUUID(string: rwChracatorUUIDField.text ?? "")
+    Settings.main.transferServiceUUID = CBUUID(string: transferServiceUUIDField.text ?? "")
+    Settings.main.transferCharacteristicUUID = CBUUID(string: transferCharacteristicUUIDField.text ?? "")
+    NotificationCenter.default.post(name: Notification.Name.onUpdateSettings, object: nil, userInfo: nil)
   }
   
   override func viewDidAppear(_ animated: Bool) {

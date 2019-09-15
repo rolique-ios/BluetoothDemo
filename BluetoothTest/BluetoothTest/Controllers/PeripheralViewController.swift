@@ -27,11 +27,12 @@ final class PeripheralViewController: UIViewController {
     
     [textView, logsTextView].forEach { $0?.delegate = self }
     self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(updateLocationLabel), name: Notification.Name.onUpdatLocation, object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
+    self.updateLocationLabel()
     self.textView.becomeFirstResponder()
   }
   
@@ -39,6 +40,10 @@ final class PeripheralViewController: UIViewController {
     super.viewDidDisappear(animated)
     
     peripheralManager?.stopAdvertising()
+  }
+  
+  @objc func updateLocationLabel() {
+    self.locationLabel.text = Locator.main.location?.data.description ?? ""
   }
 }
 
@@ -50,7 +55,7 @@ extension PeripheralViewController {
     if advertisingSwitch.isOn {
       // All we advertise is our service's UUID
       peripheralManager!.startAdvertising([
-        CBAdvertisementDataServiceUUIDsKey : [transferServiceUUID]
+        CBAdvertisementDataServiceUUIDsKey : [Settings.main.transferServiceUUID]
         ])
     } else {
       peripheralManager?.stopAdvertising()
@@ -79,7 +84,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
     
     // Start with the CBMutableCharacteristic
     transferCharacteristic = CBMutableCharacteristic(
-      type: transferCharacteristicUUID,
+      type: Settings.main.transferCharacteristicUUID,
       properties: CBCharacteristicProperties.notify,
       value: nil,
       permissions: CBAttributePermissions.readable
@@ -87,7 +92,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
     
     // Then the service
     let transferService = CBMutableService(
-      type: transferServiceUUID,
+      type: Settings.main.transferServiceUUID,
       primary: true
     )
     

@@ -58,7 +58,7 @@ extension CentralViewController: CBCentralManagerDelegate, CBPeripheralDelegate 
   func scan() {
     
     centralManager?.scanForPeripherals(
-      withServices: [transferServiceUUID], options: [
+      withServices: [Settings.main.transferServiceUUID], options: [
         CBCentralManagerScanOptionAllowDuplicatesKey : NSNumber(value: true as Bool)
       ]
     )
@@ -119,7 +119,7 @@ extension CentralViewController: CBCentralManagerDelegate, CBPeripheralDelegate 
     peripheral.delegate = self
     
     // Search only for services that match our UUID
-    peripheral.discoverServices([transferServiceUUID])
+    peripheral.discoverServices([Settings.main.transferServiceUUID])
   }
   
   /** The Transfer Service was discovered
@@ -139,7 +139,7 @@ extension CentralViewController: CBCentralManagerDelegate, CBPeripheralDelegate 
     
     // Loop through the newly filled peripheral.services array, just in case there's more than one.
     for service in services {
-      peripheral.discoverCharacteristics([transferCharacteristicUUID], for: service)
+      peripheral.discoverCharacteristics([Settings.main.transferCharacteristicUUID], for: service)
     }
   }
   
@@ -162,7 +162,7 @@ extension CentralViewController: CBCentralManagerDelegate, CBPeripheralDelegate 
     // Again, we loop through the array, just in case.
     for characteristic in characteristics {
       // And check if it's the right one
-      if characteristic.uuid.isEqual(transferCharacteristicUUID) {
+      if characteristic.uuid.isEqual(Settings.main.transferCharacteristicUUID) {
         // If it is, subscribe to it
         peripheral.setNotifyValue(true, for: characteristic)
       }
@@ -205,10 +205,10 @@ extension CentralViewController: CBCentralManagerDelegate, CBPeripheralDelegate 
   /** The peripheral letting us know whether our subscribe/unsubscribe happened or not
    */
   func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
-    print("Error changing notification state: \(error?.localizedDescription)")
+    print("Error changing notification state: \(error?.localizedDescription ?? "")")
     
     // Exit if it's not the transfer characteristic
-    guard characteristic.uuid.isEqual(transferCharacteristicUUID) else {
+    guard characteristic.uuid.isEqual(Settings.main.transferCharacteristicUUID) else {
       return
     }
     
@@ -254,7 +254,7 @@ extension CentralViewController: CBCentralManagerDelegate, CBPeripheralDelegate 
       }
       
       for characteristic in characteristics {
-        if characteristic.uuid.isEqual(transferCharacteristicUUID) && characteristic.isNotifying {
+        if characteristic.uuid.isEqual(Settings.main.transferCharacteristicUUID) && characteristic.isNotifying {
           discoveredPeripheral?.setNotifyValue(false, for: characteristic)
           // And we're done.
           return

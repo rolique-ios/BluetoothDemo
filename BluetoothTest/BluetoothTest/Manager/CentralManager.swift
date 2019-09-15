@@ -134,10 +134,10 @@ extension CentralManager: CBPeripheralDelegate {
         for service in services {
             print("service is \(service.uuid.uuidString)")
             if service.uuid == Settings.main.notifyUUID {
-                peripheral.discoverCharacteristics([Settings.main.notifyChracatorUUID], for: service)
+                peripheral.discoverCharacteristics([Settings.main.cUUID1], for: service)
             }
             if service.uuid == Settings.main.rwUUID {
-                peripheral.discoverCharacteristics([Settings.main.rwChracatorUUID], for: service)
+                peripheral.discoverCharacteristics([Settings.main.cUUID2], for: service)
             }
         }
     }
@@ -161,7 +161,7 @@ extension CentralManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         for characteristic in service.characteristics! {
             print("discover characteristic \(characteristic)")
-            if characteristic.uuid == Settings.main.rwChracatorUUID {
+            if characteristic.uuid == Settings.main.cUUID2 {
                 let readData = ("uwei").data(using: .utf8)!
                 peripheral.writeValue(readData, for: characteristic, type: CBCharacteristicWriteType.withResponse)
             }

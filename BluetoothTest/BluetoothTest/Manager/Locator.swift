@@ -64,6 +64,7 @@ extension Locator: CLLocationManagerDelegate {
       Firebase.logLocation(location)
     }
     self.location = locations.last
+    NotificationCenter.default.post(name: NSNotification.Name.onUpdatLocation, object: nil)
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

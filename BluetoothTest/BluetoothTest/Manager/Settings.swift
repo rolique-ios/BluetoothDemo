@@ -16,11 +16,17 @@ class Settings: NSObject {
     super.init()
   }
   
+  func update() {
+    
+  }
+  
   var cUUID1 = CBUUID(string: "2C270F0C-C9D3-4E56-ACCD-15621FA1568E")
   var cUUID2 = CBUUID(string: "6082238A-C138-42B0-9562-44A1642BE5A5")
   var notifyUUID = CBUUID(string: "83951652-DF2E-4CF7-8E45-FCE84073F705")
   var rwUUID = CBUUID(string: "3ECDBC04-441D-4A7A-A62E-43081CD67ED7")
-  var notifyChracatorUUID = CBUUID(string: "2C270F0C-C9D3-4E56-ACCD-15621FA1568E")
-  var rwChracatorUUID = CBUUID(string: "6082238A-C138-42B0-9562-44A1642BE5A5")
+  var transferServiceUUID = CBUUID(string: "E20A39F4-73F5-4BC4-A12F-17D1AD666661")
+  var transferCharacteristicUUID = CBUUID(string: "08590F7E-DB05-467E-8757-72F6F66666D4")
+  
+  
 }
 
