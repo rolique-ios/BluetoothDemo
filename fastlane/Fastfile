@@ -1,0 +1,142 @@
+#fastlane match nuke distribution
+ENV['FASTLANE_XCODEBUILD_SETTINGS_RETRIES'] = "120" #this is to handle timeout due to CPU operation
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Releasing targets apps to the Apstore"
+
+  lane :createIPA do
+
+	clean_build_artifacts # Delete the local dSYM files
+	clear_derived_data #Delete existing derived data
+
+	gym(
+	  workspace: ENV["WORKSPACE_NAME"],
+    scheme: ENV['SCHEME'], 
+    export_method:"ad-hoc",
+    export_xcargs: "-allowProvisioningUpdates",
+    include_bitcode: false,
+
+     export_options: {
+        uploadBitcode: false,
+        uploadSymbols: false,
+        compileBitcode: false,
+        provisioningProfiles: {
+          ENV['BUNDLE_IDENTIFIER'] => ENV['PROVISION_NAME_ADHOC']
+        },
+          "signingStyle": "manual"
+        }
+	)
+  end
+
+  lane :register do
+    device_name = prompt(text: "Enter the device name: ")
+    device_udid = prompt(text: "Enter the device UDID: ")
+    device_hash = {}
+    device_hash[device_name] = device_udid
+    register_devices(devices: device_hash)
+    match(force: true)
+  end
+
+  lane :refresh do 
+    match(type: "adhoc", force_for_new_devices: true, app_identifier: ENV["ALL_BUNDLE_IDENTIFIERS"])
+  end
+
+  lane :release do
+    clean_build_artifacts
+    clear_derived_data 
+    gym(
+      workspace: ENV["WORKSPACE_NAME"],
+      scheme: ENV["SCHEME"],
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: { 
+          ENV['BUNDLE_IDENTIFIER'] => ENV['PROVISION_NAME_APPSTORE'] 
+        },
+        "signingStyle": "manual"
+        }
+    )
+    upload_to_app_store
+  end
+
+  lane :beta do 
+      increment_build_number
+      rebeta
+  end
+
+  lane :rebeta do
+    # clean_build_artifacts
+    # clear_derived_data
+
+
+    gym(
+      workspace: ENV["WORKSPACE_NAME"],
+      scheme: ENV["SCHEME"],
+      export_method: "ad-hoc",
+      export_options: {
+        provisioningProfiles: { 
+          ENV['BUNDLE_IDENTIFIER'] => ENV['PROVISION_NAME_ADHOC'],
+        },
+        "signingStyle": "manual"
+        }
+    )
+
+    crashlytics(
+      groups: ENV['CRASHLYTICS_GROUP_NAME'],
+      api_token: ENV['CRASHALYTIC_API_TOKEN'],
+      build_secret: ENV['CRASHALYTIC_BUILD_SECRET']
+    )
+
+    changelog = File.read(ENV["CHANGELOG_PATH"])
+
+    slack(
+      slack_url: ENV["SLACK_URL"],
+      message: "New version available for testing",
+      channel: ENV["SLACK_CHANNEL"],
+      default_payloads: [:git_branch, :git_author],
+      attachment_properties: { 
+      author_name: ENV["APP_NAME"],
+      author_icon: "https://media.idownloadblog.com/wp-content/uploads/2016/03/iOS-7-App-Store-app-icon-small.png",
+      fields: [{
+        title: "Build",
+        value: get_build_number,
+        short: true
+      }, {
+        title: "Release Notes",
+        value: changelog,
+        short: false
+        }],
+        footer: ENV["CRASHLYTICS_SHARE_URL"],
+        footer_icon: "https://png.pngtree.com/element_pic/17/02/19/ea34cf9ec95b3b95563f13b7f507bb64.jpg"
+      }
+    )
+  end
+
+  lane :testSlack do
+    changelog = "s"
+
+    slack(
+      slack_url: ENV["SLACK_URL"],
+      message: "New version available for testing",
+      channel: ENV["SLACK_CHANNEL"],
+      default_payloads: [:git_branch, :git_author],
+      attachment_properties: { 
+      author_name: ENV["APP_NAME"],
+      author_icon: "https://media.idownloadblog.com/wp-content/uploads/2016/03/iOS-7-App-Store-app-icon-small.png",
+      fields: [{
+        title: "Build",
+        value: get_build_number,
+        short: true
+      }, {
+        title: "Release Notes",
+        value: changelog,
+        short: false
+        }],
+        footer: ENV["CRASHLYTICS_SHARE_URL"],
+        footer_icon: "https://png.pngtree.com/element_pic/17/02/19/ea34cf9ec95b3b95563f13b7f507bb64.jpg"
+      }
+    )
+    end
+
+  end

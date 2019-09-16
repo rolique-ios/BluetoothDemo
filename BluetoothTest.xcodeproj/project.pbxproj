@@ -55,6 +55,7 @@
 		25444E2B232B938E007D6610 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E04232B938E007D6610 /* UIEdgeInsets.swift */; };
 		25444E34232B9A86007D6610 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E33232B9A86007D6610 /* Device.swift */; };
 		2562E262232E021900C30D9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2562E261232E021900C30D9A /* Constants.swift */; };
+		2580781B232F890A00CBBAF3 /* Changelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2580781A232F890900CBBAF3 /* Changelog.txt */; };
 		25D23FE3232BB0370020DB4C /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */; };
 		25D23FE4232BB0370020DB4C /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D23FE2232BB0370020DB4C /* DeviceTableViewCell.xib */; };
 		25DED8E7232F697D00573C1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DED8E6232F697D00573C1B /* GoogleService-Info.plist */; };
@@ -116,6 +117,7 @@
 		25444E33232B9A86007D6610 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2562E261232E021900C30D9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2562E264232E02FB00C30D9A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		2580781A232F890900CBBAF3 /* Changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Changelog.txt; path = fastlane/Changelog.txt; sourceTree = SOURCE_ROOT; };
 		25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
 		25D23FE2232BB0370020DB4C /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
 		25DED8E6232F697D00573C1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -161,6 +163,7 @@
 		25444DBB232B88D2007D6610 /* BluetoothTest */ = {
 			isa = PBXGroup;
 			children = (
+				2580781A232F890900CBBAF3 /* Changelog.txt */,
 				25DED8E6232F697D00573C1B /* GoogleService-Info.plist */,
 				25D23FE0232BB0260020DB4C /* Cells */,
 				25444DBC232B88D2007D6610 /* AppDelegate.swift */,
@@ -374,6 +377,7 @@
 				25DED8E7232F697D00573C1B /* GoogleService-Info.plist in Resources */,
 				25444DC2232B88D2007D6610 /* Main.storyboard in Resources */,
 				25D23FE4232BB0370020DB4C /* DeviceTableViewCell.xib in Resources */,
+				2580781B232F890A00CBBAF3 /* Changelog.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
