@@ -55,10 +55,7 @@ extension CLLocation {
       "lon": coordinate.longitude.description,
       "cource": course.description,
       "altitude": altitude.description,
-      "speed": speed.description,
-      "horizontal_accuracy": horizontalAccuracy.description,
-      "vertical_accuracy": verticalAccuracy.description,
-    ]
+      "speed": speed.description]
   }
   
   var printed: String {
