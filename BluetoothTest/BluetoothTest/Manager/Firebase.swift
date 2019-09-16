@@ -3,7 +3,7 @@ import Foundation
 import Firebase
 import CoreLocation
 
-func log(_ str:String) { Firebase.log(str) }
+func log(_ str:String) { print(str); Firebase.log(str) }
 
 class Firebase {
   

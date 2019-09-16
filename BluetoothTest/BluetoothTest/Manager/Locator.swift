@@ -17,16 +17,23 @@ class Locator: NSObject {
   }
   
   private var locationManager = CLLocationManager()
-
+  private lazy var locationUpdateTimer: Timer = {
+    return Timer(timeInterval: 1, target: self, selector: #selector(getLocation), userInfo: nil, repeats: true)
+  }()
   func start() {
-    log("start")
+    log("start updating location")
     Firebase.clearLogs()
     configureLocationManager()
+    RunLoop.main.add(locationUpdateTimer, forMode: .default)
+  }
+
+  func stop() {
+    log("stop updating location")
+    locationManager.stopUpdatingLocation()
   }
   
-  func stop() {
-    log("stop")
-    locationManager.stopUpdatingLocation()
+  @objc func getLocation() {
+    locationManager.requestLocation()
   }
   
   private func configureLocationManager() {
@@ -53,6 +60,12 @@ extension CLLocation {
       "vertical_accuracy": verticalAccuracy.description,
     ]
   }
+  
+  var printed: String {
+    return "lat: \(coordinate.latitude.description), lon: \(coordinate.longitude.description), cource: \(course.description), altitude: \(altitude.description), speed: \(speed.description), horizontal_accuracy: \(horizontalAccuracy.description), vertical_accuracy: \(verticalAccuracy.description)"
+  }
+  
+  var jsonString: String? { return self.data.toJSONString() }
 }
 
 extension Locator: CLLocationManagerDelegate {
@@ -62,8 +75,8 @@ extension Locator: CLLocationManagerDelegate {
     
     locations.forEach { location in
       Firebase.logLocation(location)
+      Locator.main.location = location
     }
-    self.location = locations.last
     NotificationCenter.default.post(name: NSNotification.Name.onUpdatLocation, object: nil)
   }
   
