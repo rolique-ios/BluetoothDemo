@@ -57,9 +57,9 @@
 		2562E262232E021900C30D9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2562E261232E021900C30D9A /* Constants.swift */; };
 		25D23FE3232BB0370020DB4C /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */; };
 		25D23FE4232BB0370020DB4C /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D23FE2232BB0370020DB4C /* DeviceTableViewCell.xib */; };
+		25DED8E7232F697D00573C1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DED8E6232F697D00573C1B /* GoogleService-Info.plist */; };
 		B5D3508C232E470600F8E208 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3508B232E470600F8E208 /* Locator.swift */; };
 		B5D3508E232E473900F8E208 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3508D232E473800F8E208 /* Firebase.swift */; };
-		B5D35090232E507800F8E208 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5D3508F232E507800F8E208 /* GoogleService-Info.plist */; };
 		B5D35092232E662800F8E208 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D35091232E662800F8E208 /* Settings.swift */; };
 		B5D35094232EC4A100F8E208 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D35093232EC4A100F8E208 /* Notifications.swift */; };
 /* End PBXBuildFile section */
@@ -118,12 +118,12 @@
 		2562E264232E02FB00C30D9A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
 		25D23FE2232BB0370020DB4C /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
+		25DED8E6232F697D00573C1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		312844E2CB3C351BB579BA0E /* Pods_BluetoothTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluetoothTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F07EAF1F398A404B54FD0FF /* Pods-BluetoothTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothTest.debug.xcconfig"; path = "Target Support Files/Pods-BluetoothTest/Pods-BluetoothTest.debug.xcconfig"; sourceTree = "<group>"; };
 		A56D8D81E06F15D1BCF46513 /* Pods-BluetoothTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothTest.release.xcconfig"; path = "Target Support Files/Pods-BluetoothTest/Pods-BluetoothTest.release.xcconfig"; sourceTree = "<group>"; };
 		B5D3508B232E470600F8E208 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		B5D3508D232E473800F8E208 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
-		B5D3508F232E507800F8E208 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5D35091232E662800F8E208 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B5D35093232EC4A100F8E208 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,13 +161,13 @@
 		25444DBB232B88D2007D6610 /* BluetoothTest */ = {
 			isa = PBXGroup;
 			children = (
+				25DED8E6232F697D00573C1B /* GoogleService-Info.plist */,
 				25D23FE0232BB0260020DB4C /* Cells */,
 				25444DBC232B88D2007D6610 /* AppDelegate.swift */,
 				25444DC0232B88D2007D6610 /* Main.storyboard */,
 				25444DC3232B88D2007D6610 /* Assets.xcassets */,
 				25444DC5232B88D2007D6610 /* LaunchScreen.storyboard */,
 				25444DC8232B88D2007D6610 /* Info.plist */,
-				B5D3508F232E507800F8E208 /* GoogleService-Info.plist */,
 				25444E32232B9A58007D6610 /* Model */,
 				25444E2D232B94FA007D6610 /* Manager */,
 				25444E2C232B94F0007D6610 /* Controllers */,
@@ -370,8 +370,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				25444DC7232B88D2007D6610 /* LaunchScreen.storyboard in Resources */,
-				B5D35090232E507800F8E208 /* GoogleService-Info.plist in Resources */,
 				25444DC4232B88D2007D6610 /* Assets.xcassets in Resources */,
+				25DED8E7232F697D00573C1B /* GoogleService-Info.plist in Resources */,
 				25444DC2232B88D2007D6610 /* Main.storyboard in Resources */,
 				25D23FE4232BB0370020DB4C /* DeviceTableViewCell.xib in Resources */,
 			);
