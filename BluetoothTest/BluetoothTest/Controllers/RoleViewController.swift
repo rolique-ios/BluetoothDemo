@@ -10,13 +10,9 @@ import UIKit
 import CoreBluetooth
 
 enum UUIDType {
-  case cUUID1, cUUID2, notifyUUID, rwUUID, transferServiceUUID, transferCharacteristicUUID
+  case transferServiceUUID, transferCharacteristicUUID
   var defaultValue: String {
     switch self {
-    case .cUUID1: return Settings.main.cUUID1.uuidString
-    case .cUUID2: return Settings.main.cUUID2.uuidString
-    case .notifyUUID: return Settings.main.notifyUUID.uuidString
-    case .rwUUID: return Settings.main.rwUUID.uuidString
     case .transferServiceUUID: return Settings.main.transferServiceUUID.uuidString
     case .transferCharacteristicUUID: return Settings.main.transferCharacteristicUUID.uuidString
     }
@@ -44,20 +40,11 @@ class FieldString {
 }
 
 final class RoleViewController: UIViewController {
-  
-  @IBOutlet weak var cUUID1Field: UITextField!
-  @IBOutlet weak var cUUID2Field: UITextField!
-  @IBOutlet weak var notifyUUIDField: UITextField!
-  @IBOutlet weak var rwUUIDField: UITextField!
   @IBOutlet weak var transferServiceUUIDField: UITextField!
   @IBOutlet weak var transferCharacteristicUUIDField: UITextField!
   
   lazy var fieldStrings: [FieldString] = {
     return [
-      FieldString(type: .cUUID1, field: cUUID1Field),
-      FieldString(type: .cUUID2, field: cUUID2Field),
-      FieldString(type: .notifyUUID, field: notifyUUIDField),
-      FieldString(type: .rwUUID, field: rwUUIDField),
       FieldString(type: .transferServiceUUID, field: transferServiceUUIDField),
       FieldString(type: .transferCharacteristicUUID, field: transferCharacteristicUUIDField)
     ]}()

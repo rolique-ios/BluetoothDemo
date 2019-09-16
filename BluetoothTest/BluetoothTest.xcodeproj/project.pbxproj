@@ -53,8 +53,6 @@
 		25444E29232B938E007D6610 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E02232B938E007D6610 /* TimeInterval.swift */; };
 		25444E2A232B938E007D6610 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E03232B938E007D6610 /* UINavigationController.swift */; };
 		25444E2B232B938E007D6610 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E04232B938E007D6610 /* UIEdgeInsets.swift */; };
-		25444E2F232B9541007D6610 /* CentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E2E232B9541007D6610 /* CentralManager.swift */; };
-		25444E31232B9550007D6610 /* PeripheralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E30232B9550007D6610 /* PeripheralManager.swift */; };
 		25444E34232B9A86007D6610 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25444E33232B9A86007D6610 /* Device.swift */; };
 		2562E262232E021900C30D9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2562E261232E021900C30D9A /* Constants.swift */; };
 		25D23FE3232BB0370020DB4C /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D23FE1232BB0370020DB4C /* DeviceTableViewCell.swift */; };
@@ -115,8 +113,6 @@
 		25444E02232B938E007D6610 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		25444E03232B938E007D6610 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		25444E04232B938E007D6610 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
-		25444E2E232B9541007D6610 /* CentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManager.swift; sourceTree = "<group>"; };
-		25444E30232B9550007D6610 /* PeripheralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralManager.swift; sourceTree = "<group>"; };
 		25444E33232B9A86007D6610 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2562E261232E021900C30D9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2562E264232E02FB00C30D9A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -257,8 +253,6 @@
 		25444E2D232B94FA007D6610 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				25444E2E232B9541007D6610 /* CentralManager.swift */,
-				25444E30232B9550007D6610 /* PeripheralManager.swift */,
 				B5D35091232E662800F8E208 /* Settings.swift */,
 				B5D3508B232E470600F8E208 /* Locator.swift */,
 				B5D3508D232E473800F8E208 /* Firebase.swift */,
@@ -477,11 +471,9 @@
 				2562E262232E021900C30D9A /* Constants.swift in Sources */,
 				25444E2B232B938E007D6610 /* UIEdgeInsets.swift in Sources */,
 				25444E0B232B938E007D6610 /* MFMailComposeViewControllerDelegate.swift in Sources */,
-				25444E2F232B9541007D6610 /* CentralManager.swift in Sources */,
 				25444E14232B938E007D6610 /* NSBundle+Bundle.m in Sources */,
 				B5D35094232EC4A100F8E208 /* Notifications.swift in Sources */,
 				25444E06232B938E007D6610 /* TernarWrapper.swift in Sources */,
-				25444E31232B9550007D6610 /* PeripheralManager.swift in Sources */,
 				25444DBD232B88D2007D6610 /* AppDelegate.swift in Sources */,
 				25444E10232B938E007D6610 /* Functions.swift in Sources */,
 				B5D35092232E662800F8E208 /* Settings.swift in Sources */,
