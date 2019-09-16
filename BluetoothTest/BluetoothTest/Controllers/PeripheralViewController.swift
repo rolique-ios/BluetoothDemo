@@ -10,6 +10,7 @@ import UIKit
 import CoreBluetooth
 
 final class PeripheralViewController: UIViewController {
+  
   @IBOutlet private weak var textView: UITextView!
   @IBOutlet private weak var advertisingSwitch: UISwitch!
   @IBOutlet private weak var logsTextView: UITextView!
@@ -22,18 +23,24 @@ final class PeripheralViewController: UIViewController {
   private var dataToSend: Data?
   private var sendDataIndex: Int?
   
+  private lazy var locationUpdateTimer: Timer = {
+    return Timer(timeInterval: 1, target: self, selector: #selector(updateLocationLabel), userInfo: nil, repeats: true)
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     [textView, logsTextView].forEach { $0?.delegate = self }
     self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(updateLocationLabel), name: Notification.Name.onUpdatLocation, object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(updateLocationLabel), name: Notification.Name.onUpdatLocation, object: nil)
+    RunLoop.main.add(locationUpdateTimer, forMode: .default)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.updateLocationLabel()
     self.textView.becomeFirstResponder()
+    
   }
   
   override func viewDidDisappear(_ animated: Bool) {
@@ -43,7 +50,7 @@ final class PeripheralViewController: UIViewController {
   }
   
   @objc func updateLocationLabel() {
-    self.locationLabel.text = Locator.main.location?.data.description ?? ""
+    self.locationLabel.text = Locator.main.location?.printed
   }
 }
 
@@ -79,6 +86,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
     
     // We're in CBPeripheralManagerStatePoweredOn state...
     logsTextView?.text = (logsTextView?.text ?? "") + "\nPowered on."
+    logsTextView.scrollRangeToVisible(NSMakeRange(logsTextView.text.count - 1, 1))
     
     // ... so build our service.
     
@@ -107,9 +115,10 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
    */
   func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
     logsTextView?.text = (logsTextView?.text ?? "") + "\nCentral subscribed to characteristic."
+    logsTextView.scrollRangeToVisible(NSMakeRange(logsTextView.text.count - 1, 1))
     
     // Get the data
-    dataToSend = ((Locator.main.location?.data.description ?? "") + "\n" + textView.text).data(using: String.Encoding.utf8)
+    dataToSend = ((Locator.main.location?.jsonString ?? "") + "\n" + textView.text).data(using: String.Encoding.utf8)
     
     // Reset the index
     sendDataIndex = 0;
@@ -122,6 +131,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
    */
   func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
     logsTextView?.text = (logsTextView?.text ?? "") + "\nCentral unsubscribed from characteristic"
+    logsTextView.scrollRangeToVisible(NSMakeRange(logsTextView.text.count - 1, 1))
   }
   
   // First up, check if we're meant to be sending an EOM
@@ -196,6 +206,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
       )
       
       logsTextView?.text = (logsTextView?.text ?? "") + "\nSent."
+      logsTextView.scrollRangeToVisible(NSMakeRange(logsTextView.text.count - 1, 1))
       
       // It did send, so update our index
       sendDataIndex! += amountToSend;
@@ -219,6 +230,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
           // It sent, we're all done
           sendingEOM = false
           logsTextView?.text = (logsTextView?.text ?? "") + "\nSent: EOM."
+          logsTextView.scrollRangeToVisible(NSMakeRange(logsTextView.text.count - 1, 1))
         }
         
         return
@@ -242,6 +254,7 @@ extension PeripheralViewController: CBPeripheralManagerDelegate {
   func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
     if let error = error {
       logsTextView?.text = (logsTextView?.text ?? "") + "\n\(error.localizedDescription)."
+      logsTextView.scrollRangeToVisible(NSMakeRange(logsTextView.text.count - 1, 1))
     }
   }
 }

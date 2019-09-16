@@ -63,86 +63,86 @@ final class PeripheralManager: NSObject {
         
         // If the length of the value parameter exceeds the length of the maximumUpdateValueLength property of a subscribed CBCentral, the value parameter is truncated accordingly.
         let didSend = peripheralManager!.updateValue((dateString as NSString).data(using: String.Encoding.utf8.rawValue)!, for: notifyCharacteristic!, onSubscribedCentrals: nil)
-        print("send result \(didSend)")
+        log("send result \(didSend)")
     }
 }
 
 extension PeripheralManager: CBPeripheralManagerDelegate {
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        print("peripheral did change state")
+        log("peripheral did change state")
         switch peripheral.state {
         case .poweredOff:
             self.delegate?.didUpdateState("Powered Off")
             self.setPeripheralService()
         case .poweredOn:
-            print("poweredOn")
+            log("poweredOn")
             peripheralManager?.removeAllServices()
 
             self.delegate?.didUpdateState("Powered On")
         case .resetting:
-            print("resetting")
+            log("resetting")
             self.delegate?.didUpdateState("Resetting")
         case .unauthorized:
-            print("unauthorized")
+            log("unauthorized")
             self.delegate?.didUpdateState("Unauthorized")
         case .unknown:
-            print("unknown")
+            log("unknown")
             self.delegate?.didUpdateState("Unknown")
         case .unsupported:
-            print("unsupported")
+            log("unsupported")
             self.delegate?.didUpdateState("Unsupported")
         default:
-            print("unknown default state: \(peripheral.state)")
+            log("unknown default state: \(peripheral.state)")
         }
         
     }
     
     func peripheralManagerIsReady(toUpdateSubscribers peripheral: CBPeripheralManager) {
-        print("peripheralManagerIsReady toUpdateSubscribers: \(peripheral)")
+        log("peripheralManagerIsReady toUpdateSubscribers: \(peripheral)")
         sendDataTimer?.fire()
     }
     
     func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
         self.delegate?.startedBroadcasting()
-        print("peripheralManagerDidStartAdvertising peripheral: \(peripheral), error: \(error?.localizedDescription ?? "")")
+        log("peripheralManagerDidStartAdvertising peripheral: \(peripheral), error: \(error?.localizedDescription ?? "")")
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
-        print("peripheral didReceiveRead \(request)")
+        log("peripheral didReceiveRead \(request)")
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, willRestoreState dict: [String : Any]) {
-        print("peripheral willRestoreState \(dict)")
+        log("peripheral willRestoreState \(dict)")
         
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
-        print("peripheral didAdd \(service), error: \(error?.localizedDescription ?? "")")
+        log("peripheral didAdd \(service), error: \(error?.localizedDescription ?? "")")
         
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
-        print("didReceiveWrite")
+        log("didReceiveWrite")
         let request = requests.first
         if request?.characteristic == rwableCharacteristic {
             let c = request?.characteristic as! CBMutableCharacteristic
             c.value = request?.value
             peripheral.respond(to: request!, withResult: .success)
-            print("get data from centeral is \(String(data: c.value!, encoding: .utf8)!)")
+            log("get data from centeral is \(String(data: c.value!, encoding: .utf8)!)")
         }
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didOpen channel: CBL2CAPChannel?, error: Error?) {
-        print("peripheral didOpen \(channel), error: \(error?.localizedDescription ?? "")")
+        log("peripheral didOpen \(channel), error: \(error?.localizedDescription ?? "")")
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didPublishL2CAPChannel PSM: CBL2CAPPSM, error: Error?) {
-        print("peripheral didPublishL2CAPChannel \(PSM), error: \(error?.localizedDescription ?? "")")
+        log("peripheral didPublishL2CAPChannel \(PSM), error: \(error?.localizedDescription ?? "")")
         
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didUnpublishL2CAPChannel PSM: CBL2CAPPSM, error: Error?) {
-        print("peripheral didUnpublishL2CAPChannel \(PSM), error: \(error?.localizedDescription ?? "")")
+        log("peripheral didUnpublishL2CAPChannel \(PSM), error: \(error?.localizedDescription ?? "")")
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
@@ -161,7 +161,7 @@ extension PeripheralManager: CBPeripheralManagerDelegate {
         guard let services = peripheral.services else { return }
         
         for service in services {
-            print(service)
+            log(service.description)
         }
     }
 }

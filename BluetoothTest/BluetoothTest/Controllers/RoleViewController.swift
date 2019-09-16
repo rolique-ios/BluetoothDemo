@@ -96,6 +96,11 @@ final class RoleViewController: UIViewController {
     Locator.main.start()
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    Locator.main.stop()
+  }
+  
   @IBAction func centralTouchUpInside(sender: UIButton) {
     let vc = (self.storyboard?.instantiateViewController(withIdentifier: "CentralViewController"))!
     self.navigationController?.pushViewController(vc, animated: true)

@@ -50,7 +50,7 @@ final class CentralManager: NSObject {
     
     
     func connect(to device: Device) {
-        print("started connecting to \(device.name)")
+        log("started connecting to \(device.name)")
         self.connectingDevice = device
         self.centralManager?.connect(device.cbperiferal, options: [CBConnectPeripheralOptionNotifyOnConnectionKey:true, CBConnectPeripheralOptionNotifyOnDisconnectionKey:true])
     }
@@ -59,37 +59,37 @@ final class CentralManager: NSObject {
 // MARK: - CBCentralManagerDelegate
 extension CentralManager: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print("central did change state")
+        log("central did change state")
         switch central.state {
         case .poweredOff:
             self.delegate?.didUpdateState("Powered Off")
-            print("poweredOff")
+            log("poweredOff")
         case .poweredOn:
-            print("poweredOn")
+            log("poweredOn")
             self.delegate?.didUpdateState("Powered On")
             self.startScanning()
         case .resetting:
-            print("resetting")
+            log("resetting")
             self.delegate?.didUpdateState("Resetting")
         case .unauthorized:
-            print("unauthorized")
+            log("unauthorized")
             self.delegate?.didUpdateState("Unauthorized")
         case .unknown:
-            print("unknown")
+            log("unknown")
             self.delegate?.didUpdateState("Unknown")
         case .unsupported:
-            print("unsupported")
+            log("unsupported")
             self.delegate?.didUpdateState("Unsupported")
         default:
             self.delegate?.didUpdateState("Unknown default state")
-            print("unknown default state: \(central.state)")
+            log("unknown default state: \(central.state)")
         }
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         let device = Device(cbperiferal: peripheral, name: peripheral.name, rssi: nil, advertisementData: [:], state: "\(peripheral.state.description)")
         self.connected.remove(device)
-        print("didDisconnectPeripheral")
+        log("didDisconnectPeripheral")
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
@@ -100,11 +100,11 @@ extension CentralManager: CBCentralManagerDelegate {
         self.connectingDevice?.cbperiferal.readRSSI()
         self.connectingDevice?.cbperiferal.discoverServices([Settings.main.notifyUUID, Settings.main.rwUUID])
 
-        print("discoverServices")
+        log("discoverServices")
     }
     
     func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
-        print("central will restore state dict: \(dict)")
+        log("central will restore state dict: \(dict)")
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
@@ -124,15 +124,15 @@ extension CentralManager: CBCentralManagerDelegate {
 // MARK: - CBPeripheralDelegate
 extension CentralManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        print("didDiscoverServices")
-        guard let services = peripheral.services else {         print("no services available"); return }
+        log("didDiscoverServices")
+        guard let services = peripheral.services else {         log("no services available"); return }
         
         if services.isEmpty {
-            print("there are not services available")
+            log("there are not services available")
         }
         
         for service in services {
-            print("service is \(service.uuid.uuidString)")
+            log("service is \(service.uuid.uuidString)")
             if service.uuid == Settings.main.notifyUUID {
                 peripheral.discoverCharacteristics([Settings.main.cUUID1], for: service)
             }
@@ -152,15 +152,15 @@ extension CentralManager: CBPeripheralDelegate {
         let data = characteristic.value
         
         if data != nil {
-            print("did update value is \(NSString.init(data: data!, encoding: String.Encoding.utf8.rawValue)!)")
+            log("did update value is \(NSString.init(data: data!, encoding: String.Encoding.utf8.rawValue)!)")
         } else {
-            print("did update value is nil")
+            log("did update value is nil")
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         for characteristic in service.characteristics! {
-            print("discover characteristic \(characteristic)")
+            log("discover characteristic \(characteristic)")
             if characteristic.uuid == Settings.main.cUUID2 {
                 let readData = ("uwei").data(using: .utf8)!
                 peripheral.writeValue(readData, for: characteristic, type: CBCharacteristicWriteType.withResponse)
@@ -169,7 +169,7 @@ extension CentralManager: CBPeripheralDelegate {
     }
     
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
-        print("RSSI is \(RSSI.floatValue)")
+        log("RSSI is \(RSSI.floatValue)")
     }
 }
 
